@@ -7,7 +7,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-public class Topic01_CheckENV {
+public class Topic01CheckENV {
     WebDriver driver;
 
     @Test
