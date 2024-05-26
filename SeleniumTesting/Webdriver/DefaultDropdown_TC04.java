@@ -1,6 +1,5 @@
 package Webdriver;
 
-import com.sun.source.tree.ImportTree;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WebDriver;
@@ -14,13 +13,20 @@ import AutomationFCUtils.CommonUtils;
 import org.testng.Assert;
 import org.openqa.selenium.support.ui.Select;
 
-public class DropdownList_Default {
+/**
+ * This class contains test cases for the default dropdown functionality.
+ */
+public class DefaultDropdown_TC04 {
     WebDriver driver;
     WebDriverWait wait;
     CommonUtils commonUtils = new CommonUtils();
 
     Select select;
 
+    /**
+     * This method sets up the initial state of the test cases.
+     * It initializes the WebDriver, WebDriverWait and navigates to the registration page.
+     */
     @BeforeClass
     public void initPage() {
         driver = new ChromeDriver();
@@ -28,6 +34,9 @@ public class DropdownList_Default {
         driver.get("https://demo.nopcommerce.com/register");
     }
 
+    /**
+     * This test case fills out the registration form and submits it.
+     */
     @Test(priority = 1, description = "Register form")
     public void registerForm() {
         // Step 01: Click Register link
@@ -53,6 +62,9 @@ public class DropdownList_Default {
         commonUtils.clickElement(driver.findElement(By.xpath("//button[@id=\"register-button\"]")));
     }
 
+    /**
+     * This test case verifies that the registration was successful by checking the date of birth fields.
+     */
     @Test(priority = 2, description = "Verify register success")
     public void verifyRegisterSuccess() {
         // Step 01: Click on My account button
