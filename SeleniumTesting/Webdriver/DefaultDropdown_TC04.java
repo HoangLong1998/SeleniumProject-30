@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-import AutomationFCUtils.CommonUtils;
+import AutomationFC.CommonUtils;
 import org.testng.Assert;
 import org.openqa.selenium.support.ui.Select;
 

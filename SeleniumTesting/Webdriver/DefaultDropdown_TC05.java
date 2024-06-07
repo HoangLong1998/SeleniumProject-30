@@ -10,9 +10,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-import AutomationFCUtils.CommonUtils;
+import AutomationFC.CommonUtils;
 import org.testng.Assert;
-import org.openqa.selenium.support.ui.Select;
 
 /**
  * This class contains test cases for the default dropdown functionality on the Rode website.

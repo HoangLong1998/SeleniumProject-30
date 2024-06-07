@@ -1,15 +1,12 @@
-package AutomationFCUtils;
+package AutomationFC;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.*;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import java.time.Duration;
+
 import java.util.List;
 import java.util.UUID;
 
@@ -55,7 +52,7 @@ public class CommonUtils  {
      * The dropdown is assumed to be a list of 'li' elements.
      * If the option is found, it is clicked and a message is printed to the console.
      * If the option is not found, a message is printed to the console.
-     *
+     *  Th function is used for React dropdown
      * @param element The dropdown WebElement.
      * @param optionvalue The visible text of the option to select.
      */

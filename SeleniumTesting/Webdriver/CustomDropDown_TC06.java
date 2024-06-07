@@ -5,15 +5,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.*;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.List;
 
-import AutomationFCUtils.CommonUtils;
+import AutomationFC.CommonUtils;
 import org.testng.Assert;
 import org.openqa.selenium.support.ui.Select;
 
