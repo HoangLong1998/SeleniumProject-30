@@ -57,7 +57,6 @@ public class Wait_FindElement {
         List<WebElement> elements = driver.findElements(By.xpath("//input[@id=\"FirstName\"]"));
         // If find more than 1 elements
         List<WebElement> elementss = driver.findElements(By.xpath("//input[@type=\"text\"]"));
-
         // If not find any element
         // => Size of List = 0
     }

@@ -7,6 +7,12 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -96,5 +102,60 @@ public class CommonUtils  {
     public void isMultiSelect(WebElement element) {
         select = new Select(element);
         Assert.assertFalse(select.isMultiple());
+    }
+
+    /**
+     * Formats a given date string to a specified pattern.
+     *
+     * @param datePattern The pattern to format the date string.
+     * @param date The date string to be formatted.
+     * @return The formatted date string.
+     */
+    public String formatedDate(String datePattern, String date) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(datePattern);
+        String formattedDate = formatter.format(LocalDate.parse(date));
+        return formattedDate;
+    }
+
+    /**
+     * Gets the current date as a string.
+     *
+     * @return The current date string in the default format.
+     */
+    public String getCurrentDay() {
+        LocalDate date = LocalDate.now();
+        return date.toString();
+    }
+
+    /**
+     * Converts a date string from one format to another.
+     *
+     * @param inputDatePattern The pattern of the input date string.
+     * @param outputDatePattern The pattern to format the output date string.
+     * @param dateString The date string to be converted.
+     * @return The converted date string in the desired format.
+     */
+    public String convertDateStringToAnotherDateFormat(String inputDatePattern, String outputDatePattern, String dateString) {
+        String formattedDate = "";
+        // Define the input format including the day of the week
+        DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern(inputDatePattern);
+
+        // Define the output format
+        DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern(outputDatePattern);
+
+        try {
+            // Parse the date string to LocalDate (ignoring the day of the week)
+            // Format to the default format
+            LocalDate date = LocalDate.parse(dateString, inputFormatter);
+            System.out.println("Date : " + date);
+            // Format the LocalDate to desired format
+            formattedDate = outputFormatter.format(date);
+
+            // Print the result
+            System.out.println(formattedDate);  // Output: 08/09/2024
+        } catch (DateTimeParseException e) {
+            System.err.println("Invalid date format: " + e.getMessage());
+        }
+        return formattedDate;
     }
 }
